@@ -15,6 +15,7 @@ import multerConfig from './config/multer';
 const routes = new Router();
 const upload = multer(multerConfig);
 
+routes.get('/users', UserController.index);
 routes.post('/users', UserController.store);
 routes.post('/sessions', SessionController.store);
 
@@ -33,6 +34,7 @@ routes.get('/notifications', NotificationController.index);
 routes.put('/notifications/:id', NotificationController.update);
 
 routes.get('/schedule', ScheduleController.index);
+
 routes.post('/files', upload.single('file'), FileController.store);
 
 export default routes;

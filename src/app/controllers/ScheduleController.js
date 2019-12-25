@@ -24,6 +24,15 @@ class SchedulerController {
         },
       },
       order: ['date'],
+      attributes: [
+        'past',
+        'cancelable',
+        'id',
+        'date',
+        'canceled_at',
+        'user_id',
+        'provider_id',
+      ],
     });
     return res.json(appointments);
   }
